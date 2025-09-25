@@ -6,8 +6,8 @@ build-backend = "setuptools.build_meta"
 name = "pdf-text-imgs"
 version = "0.1.0"
 description = "Extracts complete text from PDF, even from images inside it, and saves images/diagrams separately"
-authors = [{ name="Mohammad Abdullah Farooqui", email="mafishere@gmail.com" }]
-licencse = {text = "MIT"}
+authors = [{ name = "Mohammad Abdullah Farooqui", email = "mafishere@gmail.com" }]
+license = { text = "MIT" }
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = ["pymupdf", "pytesseract", "pillow"]
