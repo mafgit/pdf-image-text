@@ -1,4 +1,4 @@
-# pdf-text-images — Extract Text & Diagrams from PDFs
+# pdf-image-text — Extract Text & Diagrams from PDFs
 
 > Extracts complete text from PDF, even from images inside it, and saves images/diagrams separately.
 
@@ -10,12 +10,12 @@ When using tools like **ChatGPT** or **NotebookLM** for summarizing or explainin
 
 ### 1. Installation
 ```bash
-pip install git+https://github.com/mafgit/pdf-text-images
+pip install git+https://github.com/mafgit/pdf-image-text
 ```
 
 ### 2. Import & Example
 ```py
-from pdf_text_images import convert, convert_multi
+from pdf_image_text import convert, convert_multi
 
 text = convert_multi(
     ['IS_Week # 2.pdf', 'IS_Week # 3.pdf', 'IS_Week # 3.pdf'],

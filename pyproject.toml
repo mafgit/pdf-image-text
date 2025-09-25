@@ -3,7 +3,7 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "pdf-text-images"
+name = "pdf-image-text"
 version = "0.1.0"
 description = "Extracts complete text from PDF, even from images inside it, and saves images/diagrams separately"
 authors = [{ name = "Mohammad Abdullah Farooqui", email = "mafishere@gmail.com" }]
@@ -13,4 +13,4 @@ requires-python = ">=3.9"
 dependencies = ["pymupdf", "pytesseract", "pillow"]
 
 [project.urls]
-Homepage = "https://github.com/mafgit/pdf-text-images"
+Homepage = "https://github.com/mafgit/pdf-image-text"
