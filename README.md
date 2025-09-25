@@ -1,4 +1,4 @@
-# Extract Text & Diagrams from PDFs
+# pdf-text-imgs — Extract Text & Diagrams from PDFs
 
 > Extracts complete text from PDF, even from images inside it, and saves images/diagrams separately.
 
