@@ -77,6 +77,3 @@ def convert_multi(filepaths: List[str], **kwargs):
     for filepath in filepaths:
         print(f'Processing {filepath}')
         convert(filepath, **kwargs)
-
-
-# convert_multi(['IS_Week # 2.pdf', 'IS_Week # 3.pdf', 'Week # 4.pdf'])
