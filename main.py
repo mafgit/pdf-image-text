@@ -5,9 +5,10 @@ import fitz
 import io
 import os
 import shutil
+from typing import List
 
-def main(filepath: str, min_chars=512, save_images=False) -> str:
-    """Converts PDF to text
+def convert(filepath: str, min_chars=512, save_images=False) -> str:
+    """Extracts complete text from PDF and saves images/diagrams separately
     
     Args:
         filename (str): Path to PDF file
@@ -58,4 +59,18 @@ def main(filepath: str, min_chars=512, save_images=False) -> str:
         
     return full_text
 
-main('pdf.pdf', save_images=True)
+
+def convert_multi(filepaths: List[str], **kwargs):
+    """Extracts complete text from PDFs and saves images/diagrams separately
+    
+    Args:
+        filename (str): Path to PDF file
+        min_chars (int): If no. of characters in a page that are directly extractable are less than min_chars, it would be processed using OCR, otherwise it would just be extracted simply. Use 0 if you want to force OCR for all page.
+        save_images (bool): If true, every image (e.g. diagram) found inside each page will be saved in output folder in the format <page_num>_<img_no>.<img_text>
+    """
+    for filepath in filepaths:
+        print(f'Processing {filepath}')
+        convert(filepath, **kwargs)
+
+
+convert_multi(['IS_Week # 2.pdf', 'IS_Week # 3.pdf', 'Week # 4.pdf'])
