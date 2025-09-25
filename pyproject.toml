@@ -13,4 +13,4 @@ requires-python = ">=3.9"
 dependencies = ["pymupdf", "pytesseract", "pillow"]
 
 [project.urls]
-Homepage = "https://github.com/mafgit/pdf-text-imgs"
+Homepage = "https://github.com/mafgit/pdf-text-images"
