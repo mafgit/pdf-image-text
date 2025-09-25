@@ -14,11 +14,11 @@ def convert(filepath: str, min_chars=512, save_images=False, save_text_file=True
     """Extracts complete text from PDF and saves images/diagrams separately
     
     Args:
-        filepath (str): Path to PDF file
-        min_chars (int): If no. of characters in a page that are directly extractable are less than min_chars, it would be processed using OCR, otherwise it would just be extracted simply. Use 0 if you want to force OCR for all page.
-        save_images (bool): If true, every image (e.g. diagram) found inside each page will be saved in output folder in the format <page_num>_<img_no>.<img_text>
-        langs (List[str]): List of languages used in PDF in order of importance for OCR (you should have language packs installed if you add other languages)
-        save_text_file (bool)
+        - **filepath (str)**: Path to PDF file
+        - **min_chars (int)**: If **no. of characters in a page that are directly extractable are less than min_chars, it would be processed using OCR, otherwise it would just be extracted simply. Use 0 if you want to force OCR for all page.
+        - **save_images (bool)**: If true, every image (e.g. diagram) found inside each page will be saved in output folder in the format <page_num>_<img_no>.<img_text>
+        - **langs (List[str])**: List of languages used in PDF in order of importance for OCR (you should have language packs installed if you add other languages)
+        - **save_text_file (bool)**
     """
     pdf = fitz.open(filepath)
 
@@ -74,12 +74,12 @@ def convert_multi(filepaths: List[str], single_text_file=True, **kwargs) -> str:
     """Extracts complete text from PDFs and saves images/diagrams separately
     
     Args:
-        filepath (str): Path to PDF file
-        single_text_file (bool): If true, all textual content will be stored in a single .txt file instead of separate files 
-        min_chars (int): If no. of characters in a page that are directly extractable are less than min_chars, it would be processed using OCR, otherwise it would just be extracted simply. Use 0 if you want to force OCR for all page.
-        save_images (bool): If true, every image (e.g. diagram) found inside each page will be saved in output folder in the format <page_num>_<img_no>.<img_text>
-        langs (List[str]): List of languages used in PDF in order of importance for OCR (you should have language packs installed if you add other languages)
-        save_text_file (bool)
+        - **filepath (str)**: Path to PDF file
+        - **single_text_file (bool)**: If true, all textual content will be stored in a single .txt file instead of separate files 
+        - **min_chars (int)**: If no. of characters in a page that are directly extractable are less than min_chars, it would be processed using OCR, otherwise it would just be extracted simply. Use 0 if you want to force OCR for all page.
+        - **save_images (bool)**: If true, every image (e.g. diagram) found inside each page will be saved in output folder in the format <page_num>_<img_no>.<img_text>
+        - **langs (List[str])**: List of languages used in PDF in order of importance for OCR (you should have language packs installed if you add other languages)
+        - **save_text_file (bool)**
     """
     full_text = ""
     for filepath in filepaths:
