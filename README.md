@@ -24,7 +24,7 @@ text = convert_multi(
 )
 ```
 
-### 2. Convert Single PDF
+### 3. Convert Single PDF
 ```py
 def convert(
     filepath: str, 
@@ -42,7 +42,7 @@ Args:
 - langs (List[str]): List of languages used in PDF in order of importance for OCR (you should have language packs installed if you add other languages)
 - save_text_file (bool)
 
-### 3. Convert Multiple PDFs
+### 4. Convert Multiple PDFs
 ```py
 def convert_multi(
     filepaths: List[str], single_text_file=True,
