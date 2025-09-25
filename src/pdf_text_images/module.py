@@ -23,9 +23,10 @@ def convert(filepath: str, min_chars=512, save_images=False, save_text_file=True
     pdf = fitz.open(filepath)
 
     title = os.path.splitext(os.path.basename(filepath))[0]
-    if os.path.exists(title):
-        shutil.rmtree(title)
-    os.mkdir(title)
+    if save_images:
+        if os.path.exists(title):
+            shutil.rmtree(title)
+        os.mkdir(title)
 
     full_text = ""
     for page_idx in range(pdf.page_count):
@@ -87,7 +88,7 @@ def convert_multi(filepaths: List[str], single_text_file=True, **kwargs) -> str:
         full_text += f"=========== File: {os.path.basename(filepath)} ===========\n{text.strip()}\n"
 
     if single_text_file:
-        with open(f'full_text.txt', 'w', encoding='utf-8') as f:
+        with open(f'full_text.txt', 'w', encoding='utf-8', errors="replace") as f:
             f.write(full_text)
 
     return full_text

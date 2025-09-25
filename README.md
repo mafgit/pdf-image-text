@@ -13,9 +13,15 @@ When using tools like **ChatGPT** or **NotebookLM** for summarizing or explainin
 pip install git+https://github.com/mafgit/pdf-text-images
 ```
 
-### 2. Import
+### 2. Import & Example
 ```py
 from pdf_text_images import convert, convert_multi
+
+text = convert_multi(
+    ['IS_Week # 2.pdf', 'IS_Week # 3.pdf', 'IS_Week # 3.pdf'],
+     min_chars=0 # FORCE OCR FOR EVERY PAGE
+     save_images=True,
+)
 ```
 
 ### 2. Convert Single PDF
