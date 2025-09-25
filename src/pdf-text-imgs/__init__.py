@@ -7,6 +7,9 @@ import os
 import shutil
 from typing import List
 
+__all__ = ['convert', 'convert_multi']
+__version__ = "0.1.0"
+
 def convert(filepath: str, min_chars=512, save_images=False) -> str:
     """Extracts complete text from PDF and saves images/diagrams separately
     
@@ -50,7 +53,10 @@ def convert(filepath: str, min_chars=512, save_images=False) -> str:
                 if save_images:
                     pil_img.save(f'{title}/{page_idx + 1}_{img_no}.{img_ext}')
 
-                text += pytesseract.image_to_string(pil_img)
+                try:
+                    text += pytesseract.image_to_string(pil_img)
+                except pytesseract.TesseractNotFoundError:
+                    raise RuntimeError("Error: Tesseract OCR is not installed on your system.\nInstall it first from https://github.com/tesseract-ocr/tesseract/releases")
 
         full_text += text
     
@@ -73,4 +79,4 @@ def convert_multi(filepaths: List[str], **kwargs):
         convert(filepath, **kwargs)
 
 
-convert_multi(['IS_Week # 2.pdf', 'IS_Week # 3.pdf', 'Week # 4.pdf'])
+# convert_multi(['IS_Week # 2.pdf', 'IS_Week # 3.pdf', 'Week # 4.pdf'])
