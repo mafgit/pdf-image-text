@@ -7,9 +7,6 @@ import os
 import shutil
 from typing import List
 
-__all__ = ['convert', 'convert_multi']
-__version__ = "0.1.0"
-
 def convert(filepath: str, min_chars=512, save_images=False, save_text_file=True, langs=['eng']) -> str:
     """Extracts complete text from PDF and saves images/diagrams separately
     
